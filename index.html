@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Layout skills test</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="control-panel">
+        <ul class="controls left">
+          <li id="add"><a href="#"><span>Добавить<span></a></li>
+          <li><a href="#"><span>Тип</span></a></li>
+          <li><a href="#"><span>За период</span></a></li>
+          <li><a href="#"><span>Автор</span></a></li>
+          <li><a href="#"><span>С вложениями</span></a></li>
+        </ul>
+        <ul class="controls right">
+          <li id="collapse"><a href="#"><span>Скрыть автоматические события</span></a></li>
+          <li id="hide"><a href="#"><span>Свернуть всё</span></a></li>
+        </ul>
+      </div>
+      <form class="comment-form hidden">
+        <div class="before-editor">
+          <div class="intermediate-summary">
+            <input id="int-summary" type="checkbox"  class="css-checkbox"/>
+            <label for="int-summary" class="css-label">
+              <p>Промежуточное резюме (информация для клиента)</p>
+            </label>
+            <div class="hint">Выполнить до 05.11.2014 16:01 MSK</div>
+          </div>
+          <div class="control-time">
+            <label for="control-datetime">Контрольное время (МСК)</label>
+            <input id="control-datetime" class="datetimepicker" type="text"/>
+          </div>
+        </div>
+        <div id="comment-field" class="text-input">
+          <label for="comment">
+            <div class="heading">КОММЕНТАРИЙ</div>
+            <ul class="editor-icons">
+              <li><a href="#"><img src="css/images/b.png" /></a></li>
+              <li><a href="#"><img src="css/images/i.png" /></a></li>
+              <li><a href="#"><img src="css/images/u.png" /></a></li>
+              <li><a href="#"><img src="css/images/s.png" /></a></li>
+              <li><a href="#"><img src="css/images/anchor.png" /></a></li>
+              <li><a href="#"><img src="css/images/html.png" /></a></li>
+            </ul>
+          </label>
+          <textarea id="comment" rows=4></textarea>
+        </div>
+
+        <div id="intermediate-summary-comment">
+
+          <div class="text-input">
+            <label for="done-area">
+              <div class="heading">ВЫПОЛНЕННЫЕ ДЕЙСТВИЯ</div>
+              <div class="hint">Введено символов <span id="done-counter">0</span> из 500</div>
+            </label>
+            <textarea id="done-area" rows=4 maxlength="500"></textarea>
+          </div>
+
+          <div class="text-input">
+            <label for="plan-area">
+              <div class="heading">ПЛАН ДЕЙСТВИЙ</div>
+              <div class="hint">Введено символов <span id="plan-counter">0</span> из 500</div>
+            </label>
+            <textarea id="plan-area" rows=4 maxlength="500"></textarea>
+          </div>
+
+          <div class="control-time">
+            <label for="next-datetime">Следующий срок выполнения</label>
+            <input id="next-datetime" class="datetimepicker" type="text"/>
+          </div>
+
+          <div id="tab" class="folded">
+            <span><a id="summary-control" href="#">Предыдущие резюме</a></span>
+          </div>
+          <div id="summary" class="summary">
+            <div class="heading control-panel">
+              <ul class="controls left">
+                <li>05.10.2014 17:14 МСК</li>
+                <li>ВАСЯ ПЕТРОВ (МУФС ФС С.ПЕТЕРБУРГ СЗР РЦМУ)</li>
+              </ul>
+              <ul class="controls right">
+                <li class="prev"><a href="#">Предыдущее</a></li>
+                <li class="next"><a href="#">Следующее</a></li>
+              </ul>
+            </div>
+            <div class="summary-body">
+              <h2>ВЫПОЛНЕННЫЕ ДЕЙСТВИЯ</h2>
+              <p>Было слишком много строительной пыли на оборудовании. Влажная уборка инженером помогла решить проблему. Также пришлось перезагрузить сервер с ip 178.10.31.2 и поменять UPS на всей серверной стойке, так как он вышел из строя. Также пришлось перезагрузить сервер с ip 178.10.31.2 и поменять UPS на всей серверной стойке, так как он вышел из строя. Также пришлось перезагрузить.</p>
+              <h2>ПЛАН ДЕЙСТВИЙ</h2>
+              <p>Было слишком много строительной пыли на оборудовании. Влажная уборка инженером помогла решить проблему. Также пришлось перезагрузить сервер с ip 178.10.31.2 и поменять UPS на всей серверной стойке, так как он вышел из строя. Также пришлось перезагрузить сервер с ip 178.10.31.2 и</p> <p>поменять UPS на всей серверной стойке, так как он вышел из строя. Также пришлось перезагрузить сервер с ip 178.10.31.2 и поменять UPS на всей серверной стойкеё, так как он вышел из строя.</p>
+              <h2>ПЛАНИРУЕМЫЙ СРОК ИСПОЛНЕНИЯ</h2>
+              <p>17.10.2017 10:31 MSK</p>
+            </div>
+          </div>
+        </div>
+        <div class="files">
+          <div class="files-controls">
+            <div class="btn add-file">
+              <span>Прикрепить файл</span>
+              <input id="addfile" type="file" multiple/>
+            </div>
+            <label class="hint">Поддерживаемые форматы: bmp, doc, docx, gif, jpeg, html, mht, mtt, mp3msg, pcap, pdf, png, rtf, tiff, txt, vsd, xls, xlxs, zip. Максимальный размер файла: 10 Мб.</label>
+          </div>
+        </div>
+        <div class="form-controls">
+          <a type="submit" id="saveButton" class="btn disabled">Сохранить</a>
+          <a id="cancel" class="btn" href="#">Отмена</a>
+        </div>
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+    <script src="js/md5.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
